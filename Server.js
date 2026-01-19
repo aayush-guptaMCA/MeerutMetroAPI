@@ -4,7 +4,7 @@ const cors = require('cors');
 const pool = require('./db');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 app.use(cors());  
 app.use(express.json());
 
@@ -104,3 +104,4 @@ app.get('/route', (req, res) => {
 app.listen(PORT, () => {
   console.log(`API running at http://localhost:${PORT}`);
 });
+
